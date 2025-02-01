@@ -17,7 +17,15 @@ namespace ConsoleProject1
         {
             return Preco * Quantidade;
         }
-
+        public void AdicionarProdutos(int quantidade)
+        {
+            Quantidade += quantidade;
+        }
+        public void RemoverProdutos(int quantidade)
+        {
+            Quantidade -= quantidade;
+        }
+       
         public override string ToString()
         {
             return Nome
@@ -28,5 +36,6 @@ namespace ConsoleProject1
                 + "  Unidades, Total: $ "
                 + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
+
     }
 }
