@@ -1,15 +1,15 @@
 ﻿using System.Globalization;
 using ConsoleProject1;
 
-Produto p = new Produto();
-
 Console.WriteLine("Entre com os dados do produto");
 Console.Write("nome: ");
-p.Nome = Console.ReadLine();
+string nome = Console.ReadLine();
 Console.Write("Preço: ");
-p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 Console.Write("Quantidade no estoque: ");
-p.Quantidade = int.Parse(Console.ReadLine());
+int quantidade = int.Parse(Console.ReadLine());
+
+Produto p = new Produto(nome, preco, quantidade);
 
 Console.WriteLine();
 Console.WriteLine("Dados do Produto: " + p);
