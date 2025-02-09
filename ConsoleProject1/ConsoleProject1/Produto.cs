@@ -9,9 +9,10 @@ namespace ConsoleProject1
 {
     internal class Produto
     {
-        public string Nome;
-        public double Preco;
-        public int Quantidade;
+        private string _nome;
+        public double Preco { get; private set; }
+        public int Quantidade { get; private set; }
+        
 
         public Produto(string nome, double preco, int quantidade)
         {
@@ -25,7 +26,17 @@ namespace ConsoleProject1
             Nome = nome;
             Preco = preco;
         }
-
+        public string Nome
+        {
+            get { return _nome; }
+            set
+            {
+                if(value != null && value.Length > 1)
+                {
+                    _nome = value;
+                }
+            }
+        }
         public double ValorTotalEmEstoque()
         {
             return Preco * Quantidade;
@@ -41,7 +52,7 @@ namespace ConsoleProject1
        
         public override string ToString()
         {
-            return Nome
+            return _nome
                 + ", $ "
                 + Preco.ToString("F2", CultureInfo.InvariantCulture)
                 + ", "
