@@ -7,23 +7,22 @@ using System.Globalization;
 
 namespace ConsoleProject1
 {
-    internal class Produto
+    class Produto
     {
         private string _nome;
         public double Preco { get; private set; }
         public int Quantidade { get; private set; }
-        
 
         public Produto(string nome, double preco, int quantidade)
         {
-            Nome = nome;
+            _nome = nome;
             Preco = preco;
             Quantidade = quantidade;
         }
 
         public Produto(string nome, double preco)
         {
-            Nome = nome;
+            _nome = nome;
             Preco = preco;
         }
         public string Nome
